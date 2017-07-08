@@ -1,0 +1,8 @@
+Client Side:
+Index .html has my designed sidebar and topbar , it has ng view div , which is routed by app.js config file
+,Now My Admin panel is complete , and controller connects ng view to server.
+
+Server Side :
+server.js used to create server
+routes.js used to save data in Mongo DB and perform other get post , by Controller
+modelschema:Makes model for DB data

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <link rel="stylesheet" href="./public/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="./public/js/angular.min.js"> </script>
+    <script src="./public/js/angular-route.min.js"> </script>
+    <script src="./app.js"> </script>
+    <script src="./controller/UserController.js"> </script>
+    <script src="./controller/MoviesController.js"> </script>
+    <title>Admin</title>
+    <style>
+
+    .MenuIcon
+    {
+  width: 35px;
+  height: 3px;
+  background-color: black;
+  margin: 6px 0;
+
+
+    }
+    .menIco
+    {
+      position: relative;
+      top:8px;
+      left:285px;
+    }
+    .topMovies
+    {
+      /*background-color: rgb(255, 153, 51 );*/
+      /*background-color: rgba(138,43,226,0.6); /*blue violet*/
+      background-color: rgba(220,20,60,0.88);
+
+      margin-left: 0 !important;
+      margin-top: 0 !important;
+
+      float: left !important;
+      height: 100% !important;
+      width: 20% !important;
+      min-width: 250px !important;
+      position: fixed;
+
+
+
+    }
+    .menbod
+    {
+      margin-top:4px;margin-left:0;opacity:1;
+    }
+    .list-group .list-group-item
+    {
+      align:right;color:black;
+      /*text-align:center;color:darkred;*/
+      font-size: 17px;
+     /*background-color: blueviolet;*/
+     /*background-color: darkorchid;*/
+     background-color: white;
+     border-color: transparent;
+     border-color: pink;
+     font-family:lavanderia;
+
+    }
+    .list-group .list-group-item .active a{
+      color:black !important;
+    }
+
+
+    </style>
+  </head>
+  <body>
+
+
+    <div class="container-fluid"name="con"style="background-color:white;height:10% !important;position:relative;padding:0;overflow-x:hidden;margin-left:280px;z-index:10;min-height:200px !important;float:top;">
+
+<div class="menbod"onclick="openMenu()"style="float:left;margin-left:15px;">
+  <div class="MenuIcon">
+
+  </div>
+  <div class="MenuIcon">
+
+  </div><div class="MenuIcon">
+
+  </div>
+</div>
+
+<h3 class="dashboard"style="float:left;margin-top:8px;margin-left:5%;">DashBoard</h3>
+<h4 style="float:right;margin-top:10px;margin-right:5%;">LogOut</h4>
+<!--
+
+=================================================================
+
+
+--></br></br>
+<div ng-view>
+
+</div>
+
+
+
+</div>
+
+<div id="topmo"class="container topMovies"style="border:3px solid white;opacity:1;overflow-y:scroll;top:0;opacity:1;">
+
+      <center>
+      <b><h3 style="color:white;margin-top:15px;font-family:sans-serif;">BOOK MY MOVIE</h3></b>
+
+        <div class="horiLine"style="width:100%;border:solid 0.6px white !important;border-color:white;">
+        </div>
+      </br>
+      <div class="closeMen"onclick="openMenu()"style="margin-top:4px;margin-left:0;">
+        <div class="MenuIcon"style="transform:rotate(-45deg) translate(-9px,4px);background-color:white;">
+
+        </div>
+        <div class="MenuIcon"style="transform:rotate(45deg);background-color:white;opacity:0;">
+
+        </div>
+        <div class="MenuIcon"style="transform:rotate(45deg) translate(-8px,-4px);background-color:white;">
+
+        </div>
+      </div>
+
+      </center>
+
+     </br>
+
+      <div class="list-group">
+        <a href="#"  class="list-group-item active"><span class="glyphicon glyphicon-home"></span> DASHBOARD</a></br>
+        <a href="#" class="list-group-item"><span class="glyphicon glyphicon-film"></span>  THEATRES</a></br>
+        <a href="#/movies" class="list-group-item"><span class="glyphicon glyphicon-play"></span>  MOVIES</a></br>
+        <a href="#" class="list-group-item"><span class="glyphicon glyphicon-th"></span> MANAGE SHOWS</a></br>
+        <a href="#"class="list-group-item">ADD SHOW TIMINGS</a></br>
+
+      </div>
+
+    </div>
+
+<script >
+
+
+  function openMenu()
+  {
+
+    var con=document.getElementsByName('con');
+    var menu=document.getElementsByClassName('container topMovies');
+    //var mb=document.getElementsByClassName('menbod');
+    //var tb=document.getElementsByClassName('TopBarr');
+    //var db=document.getElementsByClassName('dashboard');
+    //tb[0].style.marginLeft=tb[0].style.marginLeft==='0%'?'20%':'0%';
+    //tb[0].style.width=tb[0].style.width==='100%'?'80%':'100%';
+    //db[0].style.marginLeft=db[0].style.marginLeft==='70px'?'15px':'70px';
+    //con[0].style.marginLeft=con[0].style.marginLeft==='280px'?'0px':'280px';
+
+    //menu[0].style.width=menu[0].style.width==='250px'?'0':'250px';
+    //db[0].style.zIndex=db[0].style.zIndex==='-15'?'15':'-15';
+    //mb[0].style.opacity=mb[0].style.opacity==='0'?'1':'0';
+
+    menu[0].style.opacity=menu[0].style.opacity==='0'?'1':'0';
+
+    con[0].style.marginLeft=con[0].style.marginLeft==='280px'?'0':'280px';
+    /*if(parseInt(window.innerWidth)<600){
+      db[0].style.opacity=db[0].style.opacity==='1'?'0':'1';
+    }
+    else {
+      db[0].style.opacity='1';
+    }*/
+
+
+  }
+
+
+
+
+
+
+
+</script>
+  </body>
+</html>

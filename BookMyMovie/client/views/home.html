@@ -1,0 +1,80 @@
+<div class="container-fluid"style="background-color:whitesmoke;padding-top:30px;padding-left:30px;height:900px">
+<h1 style="font-family:didot;color:indigo; margin-left:20%;;">Add Theatres</h1>
+  <div class="row">
+    <div class="row-md-6"style="max-width:50%;margin-left:20%;">
+
+      <div class="form-group">
+        <label for="TheatreName"><b>Theatre Name:</b></label>
+        <input type="text" id="TName"placeholder="Theatre Name" ng-model="User.TheatreName"class="form-control"/>
+      </div>
+
+      <div class="form-group">
+        <label for="State"><b>State:</b></label>
+
+        <select name="state" class="form-control" id="State"ng-model="User.State">
+          <option value="Delhi">Delhi</option>
+
+    <option value="Haryana">Haryana</option>
+    <option value="Uttar Pradesh">Uttar Pradesh</option>
+    <option value="Goa">Goa</option>
+    <option value="Maharashtra">Maharashtra</option>
+    <option value="AndhraPradesh">AndhraPradesh</option>
+  </select>
+
+      </div>
+      <div class="form-group">
+        <label for="City"><b>City:</b></label>
+
+        <select name="city" class="form-control" id="City"ng-model="User.City">
+    <option value="Delhi">Delhi</option>
+    <option value="Faridabad">Faridabad</option>
+    <option value="Mumbai">Mumbai</option>
+    <option value="Chennai">Chennai</option>
+    <option value="Pune">Pune</option>
+    <option value="Kolkata">Kolkata</option>
+  </select>
+
+
+      </div>
+      <div class="form-group">
+        <label for="Seats">Seating Capacity</label>
+        <input type="text" placeholder="0" id="Seats"ng-model="User.Seats"class="form-control"/>
+      </div>
+       <div class="form-group">
+        <button class="btn btn-success" ng-show="add"ng-click="RegisterUser()">Add</button>
+        <button class="btn btn-warning" ng-show="save"ng-click="SaveUser()">Save</button>
+
+      </div>
+      </div>
+
+    </div>
+
+    <div class="row"style="">
+      <div class="row-md-6"style="border:solid 2px whitesmoke;">
+        <table class="table table-bordered"style="background-color:white;border:solid 2px gainsboro">
+          <tr>
+            <th>Theatre</br> Name</th>
+            <th>State</th>
+            <th>City</th>
+            <th>Seats</th>
+            <th>Edit</th>
+            <th>Delete</th>
+          </tr>
+          <tr ng-repeat="x in TheatreDetails">
+            <td>{{x.TheatreName}}</td>
+            <td>{{x.State}}</td>
+            <td>{{x.City}}</td>
+
+            <td>{{x.Seats}}</td>
+            <td><button class="btn btn-warning" ng-click="GetUser(x)"><span class="glyphicon glyphicon-edit"></span></button></td>
+            <td ><button class="btn btn-danger" ng-click="DeleteUser(x)"><span class="glyphicon glyphicon-trash"></span></button></td>
+
+          </tr>
+
+        </table>
+
+      </div>
+
+    </div>
+
+  </div>

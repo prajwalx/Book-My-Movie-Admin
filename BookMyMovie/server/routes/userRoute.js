@@ -43,6 +43,18 @@ router.get('/GetUser',function (req,res) {
   });
 
 });
+
+router.get('/GetMovies',function (req,res) {
+  Movie.find({},function (err,data) {
+    if(err)
+    throw err;
+    else{
+      res.json(data);
+    }
+  });
+
+});
+
 router.delete('/DeleteUser/:id',function (req,res) {
   Theatre.remove({_id:req.params.id}, function (err,docs) {
     if(err)

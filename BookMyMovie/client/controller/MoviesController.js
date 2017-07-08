@@ -1,6 +1,7 @@
 angular.module('myApp').controller('MoviesController',function ($scope,$http,$window) {
   $scope.OneRecord=false;
   $scope.MovieYear="";
+  $scope.LocalDB=false;
   $scope.SearchMovie = function () {
   $scope.OneRecord=false;
 
@@ -24,17 +25,32 @@ angular.module('myApp').controller('MoviesController',function ($scope,$http,$wi
 
   }
 
+  
+
   $scope.AddMovie = function () {
     $http.post('/SaveMovie',$scope.MovieDetails).then(function (response) {
       console.log('Movie Added');
       $window.alert("Movie Added Successfully");
       $scope.OneRecord=false;
+     init();
 
+    });
+
+  }
+
+  var init = function () {
+    $http.get('/GetMovies').then(function (response) {
+      $scope.DBMovieDetails = response.data;
+      if(response.data.length==0)
+      $scope.LocalDB=false;
+      else {
+        $scope.LocalDB=true;
+      }
 
     });
 
   }
 
 
-
+init();
 });

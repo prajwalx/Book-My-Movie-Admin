@@ -66,6 +66,19 @@ router.delete('/DeleteUser/:id',function (req,res) {
   });
 
 });
+
+router.delete('/DeleteMovie/:id',function (req,res) {
+  Movie.remove({_id:req.params.id}, function (err,docs) {
+    if(err)
+    throw err;
+    else {
+      console.log('Movie Removed SuccessFully');
+      res.send('Movie Removed Successfully');
+    }
+  });
+
+});
+
 router.post('/SaveUser',function (req,res) {
   myTheatre = new Theatre();
   myTheatre.TheatreName=req.body.TheatreName;

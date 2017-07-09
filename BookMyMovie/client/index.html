@@ -57,6 +57,7 @@
     .list-group .list-group-item
     {
       text-align:left;color:black;
+
       /*text-align:center;color:darkred;*/
       font-size: 17px;
      /*background-color: blueviolet;*/
@@ -65,7 +66,8 @@
      border-color: transparent;
      border-color: pink;
      font-family:lavanderia;
-     min-width: 50% !important;
+     transition: 0.4s;
+     /*min-width: 50% !important;*/
 
 
     }
@@ -80,7 +82,7 @@
 
 
     <div class="container-fluid"name="con"
-    style="background-color:white;position:relative;padding:0;overflow-x:hidden;margin-left:0px;">
+    style="background-color:white;position:relative;padding:0;overflow-x:hidden;margin-left:0px;transition:0.4s;">
 
 <div class="menbod"onclick="openMenu()"style="float:left;margin-left:15px;">
   <div class="MenuIcon">
@@ -113,11 +115,10 @@
 <div id="topmo"class="topMovies"style="border:3px solid white;overflow-y:scroll;top:0;">
 
       <center>
-      <b><h3 style="color:white;margin-top:15px;font-family:sans-serif;">BOOK MY MOVIE</h3></b>
+      <!-- <b><h4 style="color:white;margin-top:15px;font-family:sans-serif;">BOOK MY MOVIE</h4></b> -->
 
-        <div class="horiLine"style="width:100%;border:solid 0.6px white !important;border-color:white;">
-        </div>
-      </br>
+
+</br>
       <div class="closeMen"onclick="openMenu()"style="margin-top:4px;margin-left:0;">
         <div class="MenuIcon"style="transform:rotate(-45deg) translate(-9px,4px);background-color:white;">
 
@@ -129,18 +130,41 @@
 
         </div>
       </div>
-
+      <!-- <div class="horiLine"style="width:100%;border:solid 0.6px white !important;border-color:white;">
+      </div> -->
       </center>
+
 
      </br>
 
-      <div class="list-group"id="lgtr" onclick="openMenu()"style="transition: 0.3s;width:0%;">
+      <!-- <div class="list-group"id="lgtr" onclick="openMenu()"style="transition: 1.8s;width:0%;">
         <a href="#"  class="list-group-item active"><span class="glyphicon glyphicon-home"></span> DASHBOARD</a></br>
         <a href="#" class="list-group-item"><span class="glyphicon glyphicon-film"></span>  THEATRES</a></br>
         <a href="#/movies" class="list-group-item"><span class="glyphicon glyphicon-play"></span>  MOVIES</a></br>
         <a href="#" class="list-group-item"><span class="glyphicon glyphicon-th"></span> MANAGE SHOWS</a></br>
         <a href="#"class="list-group-item">ADD SHOW TIMINGS</a></br>
 
+      </div> -->
+      <div class="btn-group-vertical"style="width:100%;"onclick="openMenu()">
+        <a class="btn btn-danger active " style=""href="#">
+        <button class="btn btn-danger" style="width:inherit;text-align:left;"><span class="glyphicon glyphicon-home"></span>DASHBOARD </button>
+        </a>
+      </br>
+        <a class="btn btn-danger active"href="#">
+        <button class="btn btn-danger" style="width:inherit;text-align:left;"><span class="glyphicon glyphicon-film"></span>THEATRES </button>
+        </a>
+      </br>
+        <a class="btn btn-danger active"href="#/movies">
+        <button class="btn btn-danger" style="width:inherit;text-align:left;"><span class="glyphicon glyphicon-play"></span>MOVIES </button>
+        </a>
+        </br>
+        <a class="btn btn-danger active"href="#">
+        <button class="btn btn-danger" style="width:inherit;text-align:left;"><span class="glyphicon glyphicon-th"></span>MANAGE SHOWS </button>
+        </a>
+        </br>
+        <a class="btn btn-danger active"href="#">
+        <button class="btn btn-danger" style="width:inherit;text-align:left;">ADD SHOW TIMINGS </button>
+        </a>
       </div>
 
     </div>

@@ -25,7 +25,7 @@ angular.module('myApp').controller('MoviesController',function ($scope,$http,$wi
 
   }
 
-  
+
 
   $scope.AddMovie = function () {
     $http.post('/SaveMovie',$scope.MovieDetails).then(function (response) {
@@ -34,6 +34,14 @@ angular.module('myApp').controller('MoviesController',function ($scope,$http,$wi
       $scope.OneRecord=false;
      init();
 
+    });
+
+  }
+  $scope.DeleteMovie = function (Movie) {
+    $http.delete('/DeleteMovie/'+Movie._id).then(function (response) {
+      console.log('Movie Deleted');
+      $window.alert("Movie Deleted Successfully");
+      init();
     });
 
   }
